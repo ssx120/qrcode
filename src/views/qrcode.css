@@ -1,0 +1,8 @@
+.qrcoede_warp{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.qrcode_item{
+    width: 45%;
+}
