@@ -23,6 +23,12 @@ export default new Router({
       path: '/qrcode',
       name: 'qrcode',
       component: () => import( './views/qrcode.vue')
-    }
+    },
+    {
+      path: '/module',
+      name: 'module',
+      component: () => import( './views/module/module.vue')
+    },
+    // module
   ]
 })

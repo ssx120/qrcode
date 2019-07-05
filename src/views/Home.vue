@@ -35,6 +35,17 @@
             生成演示二维码
           </div>
     </div>
+    <!-- 提示信息 -->
+    <div class="tips">
+         <transition name="fade">
+            <div v-if="show" class="tips_content">
+              <div class="tips_warp">
+                   <img src="@/assets/loading.png" alt="" class="loading">
+                   <h5>{{tipsText}}</h5>
+              </div>
+            </div>
+         </transition>
+    </div>
   </div>
 </template>
 
@@ -46,6 +57,8 @@ export default {
   name: "home",
   data() {
     return {
+      tipsText:"",
+      show:false,
       title:null,
       select_active:null,
       select_function:[],
@@ -108,7 +121,10 @@ export default {
       }
      this.select_function = [...array]
     },
+    // 按生成二维码
     create(){
+      this.tipsText = "生成中"
+      this.show= true
       let data = {
         "title":this.title,
         "valid_date":this.select_active,//day,week,month,long
@@ -119,8 +135,19 @@ export default {
           url: '/api/v1.0/qrcode/add',
           data: data
       }).then(e=>{
-        let source = e.data.data.qrcodeList
-        this.$router.push({name:"qrcode",params:{qrcocd:source}})
+        if(e.data.status == 200){
+          this.show= false
+          let source = e.data.data.qrcodeList
+          this.$router.push({name:"qrcode",params:{qrcocd:source}})
+        }
+        else
+        {
+          this.tipsText = e.data.info
+          setTimeout(() => { 
+            this.show = false
+          }, 1000);
+        }
+        
       })
     }
   },
