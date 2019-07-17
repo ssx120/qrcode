@@ -1,0 +1,136 @@
+.commonweal{
+    background: #ffedcd;
+    margin: 5% 5% 0 5%;
+    padding: 3%;
+    display: flex;
+    align-items: center;
+}
+.redbag{
+    width:5rem;
+}
+.commonweal_tips{
+    color:#cf321f;
+    text-align: center;
+}
+.commonweal_tips h5{
+    font-size: 1.3rem;
+}
+.share{
+    width:100px;
+    height:75px;
+    border-radius: 50%;
+    background:#ad5f2f; 
+    color: #fff;
+    text-align: center;
+    line-height: 75px;
+    box-sizing: border-box;
+    font-size: 1.2rem
+}
+/* 分享子页面 */
+.share_warp{
+    background:#f8f8f8 ;
+}
+.share_top,.share_bottom{
+    box-sizing: border-box;
+    padding: 0 10%;
+    background: #fff;
+    text-align: center;
+}
+.share_bottom{
+    margin-top:1rem;
+}
+.share_top h5{
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin:4rem 0;
+}
+.share_top p{
+    font-size: .9rem;
+    color: #737373;
+}
+.share_top h6{
+    margin: .5rem 0;
+    font-size: 2rem;
+}
+.share_top span{
+    font-size: 0.5rem;
+}
+.share_top div{
+    padding: 1rem 0;
+    color: #737373;
+}
+/* bottom */
+.share_bottom{
+    padding: 0 10%;
+}
+.record_title{
+    border-bottom: solid 1px #e5e5e5;
+    height: 3rem;
+    line-height:3rem;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.1rem; 
+    padding-top:0.3rem ;
+}
+.bottom_content{
+    padding: 0 2%;
+}
+.record_list{
+    margin-bottom:20%; 
+}
+.record_list li{
+    display: flex;
+    justify-content: space-between;
+    height: 3rem;
+    line-height: 3rem;
+    color:#737373;
+}
+.nin{
+    position: relative;
+    border-bottom:solid 1px #e5e5e5; 
+}
+.nin p{
+    background: #fff;
+    position: absolute;
+    padding: 0 .8rem;
+    top: -10px;
+    left: 37%;
+    color: #e5e5e5;
+}
+.share_btn{
+    color: #2d5fff;
+    border: 1px solid #2d5fff;
+    width: 60%;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 2rem;
+    margin: 3rem auto ;
+}
+/* 分享遮罩层 */
+.share_tips{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(0,0,0,0.8);
+}
+.share_solid{
+    width: 15%;
+    position: absolute;
+    top: .3rem;
+    right: 1.5rem;
+}
+.click_share{
+    width: 50%;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+}
+.share_btns{
+    width: 30%;
+    position: absolute;
+    top: 70%;
+    left:35%;
+}

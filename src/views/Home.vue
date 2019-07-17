@@ -26,7 +26,7 @@
       </div>
        <!-- 选择功能 -->
           <div class="function">
-            <div v-for="(item,index) in data" :key="index" :class="{function_active:select_function.indexOf(item.value)> -1}"
+            <div v-for="(item,index) in data" :key="index" :class="[{function_active:select_function.indexOf(item.value)> -1}]"
              @click="select_method(item.value)">{{item.name}}
             </div>
           </div>
@@ -135,7 +135,7 @@ export default {
           url: '/api/v1.0/qrcode/add',
           data: data
       }).then(e=>{
-        if(e.data.status == 200){
+        if(e.data.status == 200 && e.status == 200){
           this.show= false
           let source = e.data.data.qrcodeList
           this.$router.push({name:"qrcode",params:{qrcocd:source}})
@@ -152,7 +152,7 @@ export default {
     }
   },
   created() {
-     
+     document.title = "旗欣活码演示平台"
   },
   components: {
 

@@ -1,0 +1,42 @@
+.redPacket_warp{
+    background: #f8f8f8;
+    box-sizing: border-box;
+    margin: 5%  5% 0  5%;
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.redPacket_warp p{
+    font-size: 1.2rem;
+}
+.redPacket_warp button{
+    margin-top: .5rem;
+    height: 2rem;
+    width: 7rem;
+    background: #ffac2c;
+    border: 0;
+    color: #fff;
+}
+.redPacket_money{
+    font-size: 1.6rem;
+}
+/* 扫码领红包 */
+.creditPoint_img{
+    position: relative;
+    top: 0;
+    left: 0;
+    background:#fefcf5;
+    height: 100vh;
+   
+}
+.qrcode_warp{
+    position: relative;
+}
+.qrcode_red{
+    width: 40%;
+    position: absolute;
+    bottom:5%; 
+    left: 30%;
+}

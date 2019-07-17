@@ -19,16 +19,35 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
+    // 二维码
     {
       path: '/qrcode',
       name: 'qrcode',
       component: () => import( './views/qrcode.vue')
     },
+    // 模块
     {
       path: '/module',
       name: 'module',
       component: () => import( './views/module/module.vue')
     },
-    // module
+    // 公益捐款分享
+    {
+      path: '/commonweal_share',
+      name: 'commonweal_share',
+      component: () => import( '@/components/commonweal/commonweal_share.vue')
+    },
+    // 领取积分
+    {
+      path: '/creditPoint_child',
+      name: 'creditPoint_child',
+      component: () => import('@/components/creditPoint/creditPoint_child.vue')
+    },
+    // 领取红包
+    {
+      path: '/redPacket_child',
+      name: 'redPacket_child',
+      component: () => import('@/components/redPacket/redPacket_child.vue')
+    }
   ]
 })
