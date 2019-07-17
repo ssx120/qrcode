@@ -125,30 +125,41 @@ export default {
     create(){
       this.tipsText = "生成中"
       this.show= true
-      let data = {
-        "title":this.title,
-        "valid_date":this.select_active,//day,week,month,long
-        "module":this.select_function
+      // 判断提交的模块是否为空
+      if(this.select_function.length == 0){
+           this.tipsText = "请选择功能"
+           setTimeout(() => { 
+              this.show = false
+            }, 1000);
       }
-      this.axios({
-          method: 'post',
-          url: '/api/v1.0/qrcode/add',
-          data: data
-      }).then(e=>{
-        if(e.data.status == 200 && e.status == 200){
-          this.show= false
-          let source = e.data.data.qrcodeList
-          this.$router.push({name:"qrcode",params:{qrcocd:source}})
+      else
+      {
+        let data = {
+          "title":this.title,
+          "valid_date":this.select_active,//day,week,month,long
+          "module":this.select_function
         }
-        else
-        {
-          this.tipsText = e.data.info
-          setTimeout(() => { 
-            this.show = false
-          }, 1000);
-        }
+        this.axios({
+            method: 'post',
+            url: '/api/v1.0/qrcode/add',
+            data: data
+        }).then(e=>{
+          if(e.data.status == 200 && e.status == 200){
+            this.show= false
+            let source = e.data.data.qrcodeList
+            this.$router.push({name:"qrcode",params:{qrcocd:source}})
+          }
+          else
+          {
+            this.tipsText = e.data.info
+            setTimeout(() => { 
+              this.show = false
+            }, 1000);
+          }
         
       })
+      }
+      
     }
   },
   created() {
