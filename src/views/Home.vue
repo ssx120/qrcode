@@ -83,6 +83,10 @@ export default {
         {
           name:"公益捐款",
           value:"commonweal"
+        },
+        {
+          name:"裂变",
+          value:"growth"
         }
       ],
       date:[

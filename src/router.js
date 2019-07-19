@@ -48,6 +48,19 @@ export default new Router({
       path: '/redPacket_child',
       name: 'redPacket_child',
       component: () => import('@/components/redPacket/redPacket_child.vue')
+    },
+    //裂变
+    {
+      path:'/growth',
+      name:'growth',
+      component:()=>import('@/components/growth/growth.vue')
+    },
+    ,
+    //邀请
+    {
+      path:'/invitation',
+      name:'invitation',
+      component:()=>import('@/components/invitation/invitation.vue')
     }
   ]
 })

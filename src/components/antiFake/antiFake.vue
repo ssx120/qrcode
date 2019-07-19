@@ -4,7 +4,7 @@
         <img class="trophy" :src="imgUrl" alt="" >
         <div class="text_tips" v-if="zhengpin">此商品是正品，请放心使用</div>
         <div class="no_zp" v-if="!zhengpin">
-            <div class="text_tips" >此商品可能不是正品，请验证扫码记录</div>
+            <div class="text_tips" >此二维码已使用过，验证扫码记录</div>
             <div class="record" @click="list">查看扫码记录</div>
         </div>
     </div>

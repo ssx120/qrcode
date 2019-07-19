@@ -1,0 +1,69 @@
+.invitation_warp{
+    position: relative;
+}
+.invitation_title{
+    width: 100%;
+    position: absolute;
+    top: 5%;
+    font-size: 2.2rem;
+    text-align: center;
+    font-weight: bold;
+    color: #fff9c6;
+    text-shadow: 0 5px 2px rgb(0, 0, 0,.3);
+}
+.rule_contents{
+    position: absolute;
+    top:23%; 
+    left: 19%;
+    box-sizing: border-box;
+    padding: 5%;
+    width: 65%;
+}
+/* 头像 */
+.rule_content_title{
+    display: flex;
+    justify-content: space-around;
+    padding: .8rem 0;
+    border-bottom: 1px solid #e17e77;
+}
+.rule_content_title img{
+    width: 135%;
+}
+.rule_content_title div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: solid 1px #ccc;
+}
+/* 规则 */
+.rule_contents h5{
+    font-weight: bold;
+    /* margin-top: .5rem; */
+    line-height: 1.5rem;
+}
+.rule_contents p{
+    font-size: .7rem;
+}
+/* 按钮 */
+.btn_warp{
+    position: absolute;
+    bottom:18%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+.btn_warp div{
+    width: 50%;
+    background: #fbf2e3;
+    text-align: center;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 2.5rem;
+    margin-bottom: 1rem;
+}

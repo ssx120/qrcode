@@ -1,0 +1,116 @@
+.growth_warp{
+    position: relative;
+    /* height: 100vh; */
+}
+.growth_bg{
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+}
+.growth_title{
+    position: absolute;
+    bottom: 49%;
+    left: 34%;
+    color: #6d3217;
+    font-size: .8rem;
+    background: #ffcb5f;
+    padding: .5rem;
+    width: 7rem;
+    text-align: center;
+    height: 1rem;
+    line-height: 1rem;
+    border-radius: .8rem;
+}
+.growth_content{
+    position: absolute;
+    bottom: 7%;
+    left: 12%;
+    width: 76%;
+    text-align: center;
+    color: #fff;
+}
+.growth_time p{
+    font-size: .8rem;
+}
+.growth_time span{
+    font-size: .6rem;
+}
+.growth_date{
+    font-size: 2rem;
+    margin:.6rem 0;
+}
+.growth_money{
+    margin: 1.2rem 0;
+    font-size:.9rem;
+}
+.growth_money span{
+    color: #f6c94b;
+}
+.growth_f{
+    font-size: .6rem;
+    margin-bottom:.5rem;
+}
+.add_btn{
+    background: #f7ce4a;
+    height: 2.5rem;
+    border-radius: .2rem;
+    line-height: 2.5rem;
+    font-size: 1rem;
+    color: #6d3217;
+}
+.invitation{
+    background: #e96f68;
+    height: 2.5rem;
+    border-radius: .2rem;
+    line-height: 2.5rem;
+    font-size: 1rem;
+    color: #f5bf4e;
+    border: solid 1px #f5bf4e;
+    margin-top:.5rem; 
+}
+.growth_rule{
+    position: absolute;
+    top: 2%;
+    right: 0;
+    background: #f7ce4a;
+    color: #fff;
+    padding: .6rem;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+}
+/* 规则 */
+.rule_tips{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0,.6);
+}
+.rule_content{
+    box-sizing: border-box;
+    background: #fff;
+    width: 80%;
+    height: 60%;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    border-radius: 1rem;
+    padding: 5%;
+    overflow-y: scroll;
+}
+.rule_title{
+    border-bottom: solid 1px #ccc;
+    padding: .8rem 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.rule_text{
+    line-height: 1.8rem;
+}
+.rule_close{
+    width: 1.5rem;
+    position: fixed;
+    top: 22%;
+    right: 13%;
+}
