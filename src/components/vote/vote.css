@@ -1,0 +1,88 @@
+.vote_warp{
+    min-height: 100vh;
+    background: #f2f4f5;
+    padding: 10% 5%;
+    box-sizing: border-box;
+}
+.vote_top_title{
+    display: flex;
+    justify-content: space-between;
+}
+.vote_top_text{
+    font-size: 1.2rem;
+}
+.vote_rule{
+    width: 1.4rem;
+    height: 2.5rem;
+    text-align: center;
+    border-radius: .3rem;
+    border: solid 1px #ec9490;
+    color: #ec9490;
+    /* line-height: 2.5rem; */
+}
+.vote_title{
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 3.5rem;
+}
+.vote_banner{
+    border-radius: 1.5rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    margin: 1rem 0;
+    box-sizing: border-box;
+}
+.vote_list li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    border-bottom: 1px solid #eceeef;
+}
+.basket_warp{
+    display: flex;
+}
+.basket_logo{
+    width: 3rem;
+    margin-right: .8rem;
+}
+.vote_btn_icon{
+    width: 1rem;
+    margin-right: .1rem;
+}
+.basket_info{
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.basket_info h5{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.res{
+    font-size: .3rem;
+    color: #ec9490;
+    border: solid 1px #ec9490;
+    border-radius: .2rem;
+    padding: .1rem;
+    /* margin-left: .3rem; */
+}
+.basket_money{
+    font-size: .9rem;
+}
+.basket_money span{
+    font-size: 1.2rem;
+}
+.vote_btn{
+    background: #fff;
+    border: solid 1px #bbbbbb;
+    padding:.2rem .6rem;
+    display: flex;
+    align-items: center;
+    border-radius: .3rem;
+}

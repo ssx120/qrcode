@@ -61,6 +61,18 @@ export default new Router({
       path:'/invitation',
       name:'invitation',
       component:()=>import('@/components/invitation/invitation.vue')
+    },
+    // 投票
+    {
+      path:'/vote',
+      name:'vote',
+      component:()=>import('@/components/vote/vote.vue'),
+    },
+    {
+        path:"/success",
+        name:"voteSuccess",
+        component:()=>import('@/components/vote/success.vue')
     }
+
   ]
 })

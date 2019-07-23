@@ -87,6 +87,10 @@ export default {
         {
           name:"裂变",
           value:"growth"
+        },
+        {
+          name:"投票",
+          value:"vote"
         }
       ],
       date:[
