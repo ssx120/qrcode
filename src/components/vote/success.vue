@@ -37,7 +37,7 @@
 .success_banner{
     overflow: hidden;
     border-radius: 2rem;
-    height: 12rem;
+    height: 10rem;
 }
 .success_top h5{
     line-height: 6rem;
@@ -73,7 +73,7 @@
     height: 2.4rem;
     line-height: 2.4rem;
     border-radius: .3rem;
-    margin-top: 30%;
+    margin-top: 20%;
 }
 .ph{
     margin: 2rem 0;
