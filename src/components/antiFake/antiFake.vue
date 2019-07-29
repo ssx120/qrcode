@@ -11,7 +11,7 @@
     <!-- 扫码列表 -->
      <transition name="fade">
         <div v-if="show" class="list_warp" @click.self="show = !show">
-            <img class="close" src="@/assets/fileChild/Close.png" alt="" @click.self="show = !show">
+            <img class="close" src="@/assets/fileChild/Close.svg" alt="" @click.self="show = !show">
             <div class="list_w">
                 <div class="list_title">
                     <h5>此二维码已被扫描<span class="red_title">{{num}}次</span></h5>

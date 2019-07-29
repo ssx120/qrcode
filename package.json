@@ -12,7 +12,8 @@
     "core-js": "^2.6.5",
     "qs": "^6.7.0",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.3"
+    "vue-router": "^3.0.3",
+    "weixin-js-sdk": "^1.4.0-test"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",

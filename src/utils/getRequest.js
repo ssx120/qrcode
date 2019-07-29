@@ -11,7 +11,7 @@
     for (let i in kvarray) {
         hashkv[kvarray[i].split("=")[0]] = kvarray[i].split("=")[1];
     }
-    var kv = hashkv[name] === undefined ? "" : hashkv[name];
+    var kv = hashkv[name] === undefined ? null : hashkv[name];
     return kv;
 }
 export default getRequest

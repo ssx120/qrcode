@@ -21,99 +21,33 @@
         <!-- 投票 -->
         <div class="vote_list">
             <ul>
-                <li>
+                <li v-for="(item,index) in list" :key="index">
                     <div class="basket_warp">
-                        <img class="basket_logo" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=591012444,3681054439&fm=26&gp=0.jpg" alt="">
+                        <img class="basket_logo" :src="item.logo" alt="">
                         <div class="basket_info">
-                            <h5>雄鹿队<span class="res">推荐</span></h5>
-                            <div class="basket_money">奖金指数：<span class="num">143</span> </div>
+                            <h5>{{item.name}}<span class="res">推荐</span></h5>
+                            <div class="basket_money">奖金指数：<span class="num">{{item.num}}</span> </div>
                         </div>
                     </div>
-                    
-                    <div class="vote_btn">
-                        <img class="vote_btn_icon" src="@/assets/fileChild/heart.png" alt="">
-                        <span @click="onvote" >投票</span>
-                        <span v-if="false">已投</span>
-                        <span v-if="false">投票</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="basket_warp">
-                        <img class="basket_logo" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1331756303,1671279831&fm=26&gp=0.jpg" alt="">
-                        <div class="basket_info">
-                            <h5>太阳队<span class="res">推荐</span></h5>
-                            <div class="basket_money">奖金指数：<span class="num">242</span> </div>
-                        </div>
-                    </div>
-                    
-                    <div class="vote_btn">
-                        <img class="vote_btn_icon" src="@/assets/fileChild/heart.png" alt="">
-                        <span @click="onvote">投票</span>
-                        <span v-if="false">已投</span>
-                        <span v-if="false">投票</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="basket_warp">
-                        <img class="basket_logo" src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=285997803,1127796189&fm=26&gp=0.jpg" alt="">
-                        <div class="basket_info">
-                            <h5>公牛队<span class="res">推荐</span></h5>
-                            <div class="basket_money">奖金指数：<span class="num">500</span> </div>
-                        </div>
-                    </div>
-                    
-                    <div class="vote_btn">
-                        <img class="vote_btn_icon" src="@/assets/fileChild/heart.png" alt="">
-                        <span @click="onvote">投票</span>
-                        <span v-if="false">已投</span>
-                        <span v-if="false">投票</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="basket_warp">
-                        <img class="basket_logo" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2912161429,2191145585&fm=26&gp=0.jpg" alt="">
-                        <div class="basket_info">
-                            <h5>森林狼<span class="res">推荐</span></h5>
-                            <div class="basket_money">奖金指数：<span class="num">143</span> </div>
-                        </div>
-                    </div>
-                    
-                    <div class="vote_btn">
-                        <img class="vote_btn_icon" src="@/assets/fileChild/heart.png" alt="">
-                        <span @click="onvote">投票</span>
-                        <span v-if="false">已投</span>
-                        <span v-if="false">投票</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="basket_warp">
-                        <img class="basket_logo" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4251428281,3601648655&fm=26&gp=0.jpg" alt="">
-                        <div class="basket_info">
-                            <h5>灰熊队<span class="res">推荐</span></h5>
-                            <div class="basket_money">奖金指数：<span class="num">320</span> </div>
-                        </div>
-                    </div>
-                    
-                    <div class="vote_btn">
-                        <img class="vote_btn_icon" src="@/assets/fileChild/heart.png" alt="">
-                        <span @click="onvote">投票</span>
-                        <span v-if="false">已投</span>
-                        <span v-if="false">投票</span>
+                    <div :class="['vote_btn',index == indexs?'blue':indexs?'novote':'']" disabled="false" @click.stop="onvote(index)">
+                        <i class="iconfont" style="display:block">&#xe640;</i>
+                        <span v-text="index==indexs?'已投':'投票'"></span>
                     </div>
                 </li>
             </ul>
         </div>
         <!-- 弹窗规则 -->
          <transition name="fade">
-           <div  v-if="show" class="rule_tips" @click.self="show = !show">
+           <div  v-if="show" class="rule_tips"  @click.self="show = !show">
             <div class="rule_content">
-                <img  class="rule_close" src="@/assets/fileChild/Close.png" alt="" @click="show = !show">
+                <img  class="rule_close" src="@/assets/fileChild/Close.svg" alt="" @click="show = !show">
                 <h5 class="rule_title">
                     奖金规则
                 </h5>
                 <div class="rule_text">
+                    <br />
                  <p> 本次投票活动从8月8日开始,总奖金额100万元现金。</p>
-                 <p> 凡是投票支持以下球队的X特饮消费者,可按 以下规则获得对应金额的红包:</p>
+                 <p> 凡是投票支持以下球队的消费者,可按 以下规则获得对应金额的红包:</p>
                    <p>1、投票支持冠军球队的,可按票数份额均分5万元</p>
                    <p>2、投票支持亚军球队的,可按票数份额均分3万元</p>
                    <p>3、投票支持季军球队的,可按票数份额均分2万元</p>
@@ -131,10 +65,12 @@
                     位消费者,则刺余金顿按时投票支持获奖球队最多
                     的消费者依次分配5万元,分完为止</p>
                 </div>
+                 <br />
                  <h5 class="rule_title">
                     奖金指数
                 </h5>
                 <div class="rule_text">
+                     <br />
                 <p>奖金指数是实时变化的数字,按投系冠军球队的总金
                 额除以实时累计投票票数确定,举例如下:</p>
                  <p>1、A球队奖金指数为1000,指实时累计有50票支持
@@ -156,20 +92,54 @@
 </template>
 
 <script>
+import '@/utils/font/iconfont.css'
+import '@/utils/font/iconfont.js'
+import getRequest from "../../utils/getRequest"
 export default {
     name:"vote",
     data() {
         return {
-            show:false
+            show:false,
+            list:[
+                {
+                    logo:"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=591012444,3681054439&fm=26&gp=0.jpg",
+                    name:"雄鹿队",
+                    num:142
+                },
+                {
+                    logo:"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1331756303,1671279831&fm=26&gp=0.jpg",
+                    name:"太阳队",
+                    num:245
+                },
+                {
+                    logo:"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=285997803,1127796189&fm=26&gp=0.jpg",
+                    name:"公牛队",
+                    num:321
+                },
+                {
+                    logo:"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2912161429,2191145585&fm=26&gp=0.jpg",
+                    name:"森林狼",
+                    num:152
+                },
+                {
+                    logo:"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4251428281,3601648655&fm=26&gp=0.jpg",
+                    name:"灰熊队",
+                    num:245
+                },
+            ],
+            indexs:null
         }
     },
     created() {
-        
+        this.indexs=getRequest('index')
     },
     methods: {
         // 投票
-        onvote(){
-             this.$router.push({path:"/success"})       
+        onvote(e){
+            if(!this.indexs){
+                this.$router.push({path:"/success",query:{index:e}})       
+            }
+            
         }
     },
 }
@@ -178,6 +148,6 @@ import "./vote.css"
 
 <style scoped>
 .rule_tips .rule_text{
-    font-size: .3rem;
+    font-size: .7rem;
 }
 </style>

@@ -9,9 +9,9 @@
             </div>
             <div class="growth_date">{{date}}</div>
             <p class="growth_money">上周获得<span>39.13元 </span>已提现</p>
-            <p class="growth_f">上周共有xxx万人开奖瓜分100万</p>
-            <div class="add_btn">
-                我要加单
+            <p class="growth_f">上周共有123万人开奖瓜分100万</p>
+            <div class="add_btn" @click="scan">
+                再扫一次
             </div>
             <div class="invitation" @click="invitation">
                 邀请组队
@@ -23,7 +23,7 @@
          <transition name="fade">
            <div  v-if="show" class="rule_tips" @click.self="show = !show">
             <div class="rule_content">
-                <img  class="rule_close" src="@/assets/fileChild/Close.png" alt="" @click="show = !show">
+                <img  class="rule_close" src="@/assets/fileChild/Close.svg" alt="" @click="show = !show">
                 <h5 class="rule_title">
                     活动规则
                 </h5>
@@ -33,16 +33,14 @@
                       有用户,均分60万现金红包。
                   </p> 
                   <p>2、每周用户可邀请1名好友共同参与此活动,如邀请好友成功,则按2人每周扫码累计商品数量参与上述活动,所得现金红包按2人扫码产品价格比例分配给2人。</p>  
-                   <p>3、xxxxxxx</p> 
-                   <p>4、xxxxxxxxxxxxxx</p>
                 </div>
             </div>
         </div>
         </transition>  
     </div>    
 </template>
-
 <script>
+var wx = require('weixin-js-sdk');
 export default {
     name:"growth",
     data() {
@@ -54,6 +52,47 @@ export default {
     methods: {
         invitation(){
             this.$router.push({name:"invitation"})
+        },
+        scan(){
+            this.axios({
+                method: 'POST',
+                url: '/api/v1.0/qrcode/scan/active',
+                data:{"url":encodeURIComponent(location.href.split('#')[0])}
+            })
+            .then(e=>{
+                let data = e.data.data
+                let appId = data.appId
+                let timestamp = data.timestamp
+                let nonceStr = data.noncestr
+                let signature = data.sign
+                wx.config({
+                    debug : false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                    appId :appId, // 必填，公众号的唯一标识
+                    timestamp : timestamp, // 必填，生成签名的时间戳
+                    nonceStr : nonceStr, // 必填，生成签名的随机串
+                    signature : signature,// 必填，签名，见附录1
+                    jsApiList : [ 'scanQRCode' ]
+                    // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                    });
+                })
+                wx.ready(function () {
+                    wx.scanQRCode({
+                            desc: 'scanQRCode desc',
+                            needResult : 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+                            scanType : [ "qrCode", "barCode" ], // 可以指定扫二维码还是一维码，默认二者都有
+                            success : function(res) {
+                               var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+                            //    var RegUrl = new RegExp();
+                                // RegUrl.compile("^[A-Za-z]+://[A-Za-z0-9-_]+\\.[A-Za-z0-9-_%&\?\/.=]+$");
+                                // if(RegUrl.test(result)){
+                                    window.location.href = result
+                                // }else{
+                                //     alert(result)
+                                // }
+                            },
+                        });
+                })
+                
         }
     },
     created() {

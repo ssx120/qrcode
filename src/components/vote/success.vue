@@ -20,13 +20,14 @@
                     <p>正在冲击冠军中</p>
                 </div>
             </div>
-            <p class="ph">我的球队夺冠可能性排行</p>
-             <progress id="pg" max="100" value="40"></progress>
+            <!-- <p class="ph">我的球队夺冠可能性排行</p>
+             <progress id="pg" max="100" value="40"></progress> -->
             <div class="success_back" @click="back">返回</div>
         </div>
 
     </div>    
 </template>
+
 <style scoped="scoped">
 .success_top{
     padding: 10% 5% 0;
@@ -100,6 +101,7 @@ progress{
 
 </style>
 <script>
+import getRequest from "../../utils/getRequest"
 export default {
     name:"success",
     data() {
@@ -112,7 +114,7 @@ export default {
     },
     methods: {
         back(){
-            this.$router.back(-1)
+            this.$router.push({path:"/vote",query:{index:getRequest('index')}})
         }
     },
 }

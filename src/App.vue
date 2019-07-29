@@ -37,7 +37,7 @@
     font-weight: bold;
 }
 .rule_text{
-    line-height: 1.8rem;
+    line-height: 1.3rem;
 }
 .rule_close{
     width: 1.5rem;
